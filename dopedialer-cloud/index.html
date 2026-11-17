@@ -1,147 +1,335 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DopeDialer | Contractor Sales CRM</title><style>
-:root{font-family:Inter,ui-sans-serif,system-ui,Arial;background:#f5f6f8;color:#18202c}*{box-sizing:border-box}body{margin:0}header{background:#111827;color:white;padding:18px 30px;display:flex;align-items:center;justify-content:space-between}header strong{font-size:23px;letter-spacing:-.8px}header span{color:#9ca3af;font-size:13px}main{max-width:1500px;margin:auto;padding:25px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:20px}.metric,.panel{background:white;border:1px solid #e5e7eb;border-radius:13px;padding:18px}.metric b{font-size:27px;display:block;margin-top:7px}.muted{color:#6b7280;font-size:12px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}input,select,textarea,button{font:inherit;border:1px solid #d1d5db;border-radius:8px;padding:10px;background:white;color:#111827}input,select{min-width:135px}button{cursor:pointer;font-weight:600}button.primary{background:#111827;color:white;border-color:#111827}button:hover{filter:brightness(.96)}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr);gap:16px}table{border-collapse:collapse;width:100%;font-size:13px}th{text-align:left;color:#6b7280;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:13px 9px;border-bottom:1px solid #e5e7eb}td{padding:12px 9px;border-bottom:1px solid #f0f1f3}tr.data:hover{background:#f8fafc;cursor:pointer}tr.selected{background:#eff6ff}.pill{display:inline-block;border-radius:20px;padding:5px 9px;font-size:11px;font-weight:700;white-space:nowrap}.new{background:#e5e7eb;color:#374151}.call-soon{background:#dbeafe;color:#1d4ed8}.interested{background:#dcfce7;color:#166534}.follow-up{background:#fef3c7;color:#92400e}.demo-scheduled{background:#e9d5ff;color:#6b21a8}.customer{background:#ccfbf1;color:#115e59}.not-interested{background:#fee2e2;color:#991b1b}.do-not-call{background:#111827;color:#fff}.panel h2{font-size:18px;margin:0 0 15px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}.field label{font-size:12px;font-weight:650;color:#4b5563}.field input,.field select,.field textarea{width:100%}.field textarea{min-height:95px;resize:vertical}.detail-actions{display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap}.detail-actions a{background:#16a34a;color:white;text-decoration:none;border-radius:8px;padding:10px 15px;font-weight:700}.detail-actions a.disabled{background:#d1d5db;pointer-events:none}.history{max-height:210px;overflow:auto}.entry{border-left:3px solid #d1d5db;padding:7px 12px;margin:10px 0;font-size:12px;white-space:pre-wrap}.empty{color:#6b7280;padding:28px;text-align:center}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.note{font-size:12px;color:#6b7280;margin-top:14px}.hidden{display:none}dialog{border:0;border-radius:14px;padding:25px;max-width:450px;width:90%;box-shadow:0 20px 80px #0003}dialog::backdrop{background:#0008}dialog h2{margin-top:0}.actions{display:flex;justify-content:flex-end;gap:8px}@media(max-width:950px){.layout{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){main{padding:12px}.metrics{gap:7px}.metric{padding:12px}.toolbar>*{flex:1 1 43%}header{padding:15px}}
-.voice-settings{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 15px;padding:12px 14px;border:1px solid #dbeafe;border-radius:10px;background:#eff6ff;font-size:13px}.voice-settings select{min-width:145px}.voice-tip{font-size:12px;color:#475569;line-height:1.55}.call-btn{background:#16a34a!important;color:#fff!important;border-color:#16a34a!important}.call-btn:disabled{background:#cbd5e1!important;border-color:#cbd5e1!important;color:#64748b!important;cursor:not-allowed}.call-banner{padding:10px;background:#f0fdf4;border-radius:8px;margin-bottom:12px;font-size:12px;line-height:1.6}.outcome-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.outcome-bar button{font-size:12px;padding:7px 9px}.outcome-bar button:disabled{opacity:.45;cursor:not-allowed}
-:root{background:#f7f8fa}header{background:#111315}header strong{font-size:25px;letter-spacing:-1.2px}header span{color:#c4c7cc}button.primary{background:#15191b;border-color:#15191b}.metric b{letter-spacing:-1px}.metrics{grid-template-columns:repeat(5,1fr)}.call-btn{background:#65a30d!important;border-color:#65a30d!important}tr.selected{background:#f0fdf4}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.field{display:flex;flex-direction:column;gap:5px;margin:10px 0}.field input,.field select,.field textarea{width:100%}.detail-actions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.hidden{display:none!important}.history{max-height:260px;overflow:auto}.entry{border-bottom:1px solid #eee;padding:8px 0;overflow-wrap:anywhere}.empty{padding:24px;text-align:center;color:#6b7280}.note{font-size:12px;color:#64748b;line-height:1.6}dialog{border:1px solid #ddd;border-radius:15px;padding:24px;width:min(440px,95vw)}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.pill.do-not-call{background:#fee2e2;color:#991b1b}.pill.interested,.pill.customer{background:#dcfce7;color:#166534}.pill.follow-up{background:#fef3c7;color:#92400e}.pill.demo-scheduled{background:#ede9fe;color:#6d28d9}.pill.call-soon{background:#dbeafe;color:#1d4ed8}@media(max-width:1050px){.metrics{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}}@media(max-width:650px){header{padding:16px}header>span{display:none}main{padding:14px}.metrics{grid-template-columns:repeat(2,1fr)}.toolbar>*{flex:1;min-width:125px}.panel{padding:12px}table{min-width:640px}}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DopeDialer 3.5 · Fenfo</title><style>
+:root{font-family:Inter,system-ui,-apple-system,sans-serif;color:#e8edf5;background:#0b1020}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid #34435d;border-radius:9px;background:#1c2940;color:#f2f5fa;padding:10px 13px}button:hover{background:#293a58}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:#8ed442;color:#14210c;border-color:#8ed442;font-weight:700}.primary:hover{background:#a6eb60}.danger{color:#ffb4b4}.shell{max-width:1550px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}h1{font-size:26px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:18px 0 10px}.muted{color:#9caac1;font-size:13px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.metric,.panel{border:1px solid #2c3950;background:#111a2b;border-radius:13px;padding:16px}.metric b{font-size:27px;display:block;margin-top:5px}.tabs,.subtabs,.actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.active{border-color:#8ed442;color:#b4f475;background:#243b2b}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.toolbar input{flex:1;min-width:180px}.toolbar select{min-width:125px}.layout{display:grid;grid-template-columns:minmax(330px,1.15fr) minmax(330px,1fr);gap:15px}.list{max-height:70vh;overflow:auto}.lead{padding:12px;border:1px solid #29364d;border-radius:10px;margin:8px 0;cursor:pointer}.lead:hover,.lead.selected{background:#1e2e43;border-color:#8ed442}.phone-link{color:#b5ef86;text-decoration:none;font-weight:600;white-space:nowrap}.phone-link:hover{text-decoration:underline}.phone-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}.leadrow{display:flex;justify-content:space-between;gap:10px}.tag{font-size:11px;border:1px solid #46536a;padding:3px 7px;border-radius:30px;white-space:nowrap}.field{margin:10px 0}.field label{display:block;color:#acbbd1;font-size:12px;margin-bottom:5px}input,textarea,select{width:100%;background:#0d1626;color:#eef2f9;border:1px solid #34445d;border-radius:8px;padding:10px}textarea{min-height:100px;resize:vertical}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.history{border-top:1px solid #304058;margin-top:15px}.entry{padding:10px 0;border-bottom:1px solid #26354c;white-space:pre-wrap;overflow-wrap:anywhere}.save{font-size:12px;color:#b4f475}.warn{color:#ffc58c}.banner{padding:10px;border:1px solid #4e607a;border-radius:9px;margin:10px 0}.hidden{display:none!important}dialog{background:#111a2b;color:#e8edf5;border:1px solid #475772;border-radius:15px;width:min(760px,94vw);max-height:90vh;overflow:auto;padding:22px}dialog::backdrop{background:#030712c9}.small{font-size:12px}.nowrap{white-space:nowrap}@media(max-width:850px){.layout{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.shell{padding:12px}.list{max-height:45vh}}  .status-readout{padding:10px;border:1px solid #34445d;border-radius:8px;background:#0d1626;color:#b4f475}.followup-toggle{margin:12px 0 4px} .finish-call .actions button.active{background:#8ed442;color:#14210c;border-color:#8ed442;font-weight:700}.history-edit-btn{margin-top:9px;padding:6px 10px;font-size:12px}</style><style>
+.task-row{border:1px solid #33435b;border-radius:10px;padding:13px;margin:9px 0;background:#141f32}.task-row.done{opacity:.7}.task-row .top{align-items:flex-start}.task-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.task-actions button{padding:6px 10px;font-size:12px}.task-overdue{color:#ff9c9c}.task-today{color:#b4f475}.task-filter{display:flex;gap:7px;flex-wrap:wrap}.task-filter button{padding:7px 10px}.task-link{color:#b5ef86;overflow-wrap:anywhere}.task-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.task-priority{font-size:12px;color:#ffd28a}.task-panel{margin-top:14px;border-top:1px solid #304058;padding-top:12px}
+.date-time-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}.date-time-pair input{min-width:0;cursor:pointer;color-scheme:dark}@media(max-width:480px){.date-time-pair{grid-template-columns:1fr}}
 
-/* DopeDialer readability refresh — light, high-contrast theme */
-:root{background:#f1f5f9;color:#0f172a;color-scheme:light}
-body{background:#f1f5f9;color:#0f172a;font-size:15px;line-height:1.5}
-header{background:#fff;color:#0f172a;border-bottom:2px solid #cbd5e1;box-shadow:0 1px 4px #0f172a0d}
-header strong{color:#0f172a}header strong span{color:#1d4ed8!important}
-header span{color:#475569}header>span{color:#475569}
-main{max-width:1550px}
-h1,h2{color:#0f172a}
-.metric,.panel{background:#fff;border:1px solid #cbd5e1;box-shadow:0 2px 7px #0f172a0a}
-.metric b{color:#0f172a;font-size:30px}
-.muted,.note,.empty{color:#475569;font-size:13px}
-input,select,textarea,button{background:#fff;color:#0f172a;border:1.5px solid #94a3b8;font-size:14px;min-height:42px}
-input::placeholder,textarea::placeholder{color:#64748b;opacity:1}
-input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #93c5fd;outline-offset:2px;border-color:#2563eb}
-button.primary{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
-button.primary:hover{background:#1e40af}
-button.call-btn,.call-btn{background:#15803d!important;border-color:#15803d!important;color:#fff!important}
-button:hover{filter:none;background-color:#eff6ff}
-button.primary:hover,button.call-btn:hover{filter:brightness(.95)}
-th{color:#334155;font-size:12px;background:#f8fafc;border-bottom:2px solid #cbd5e1}
-table{font-size:14px}td{color:#0f172a;border-bottom:1px solid #e2e8f0;padding:14px 9px}
-tr.data:hover{background:#eff6ff}tr.selected{background:#dbeafe!important;box-shadow:inset 4px 0 #2563eb}
-.field label{color:#334155;font-size:13px}
-.voice-settings{background:#eff6ff;border:1px solid #93c5fd;color:#0f172a}
-.voice-tip{color:#334155;font-size:13px}
-.call-banner{background:#ecfdf5;border:1px solid #86efac;color:#14532d}
-.entry{font-size:13px;border-color:#cbd5e1}
-.pill{font-size:12px;padding:6px 10px}
-.pill.new{background:#e2e8f0;color:#1e293b}
-.pill.call-soon{background:#dbeafe;color:#1e40af}
-.pill.interested{background:#dcfce7;color:#166534}
-.pill.follow-up{background:#fef3c7;color:#92400e}
-.pill.demo-scheduled{background:#ede9fe;color:#5b21b6}
-.pill.customer{background:#ccfbf1;color:#115e59}
-.pill.not-interested{background:#fee2e2;color:#991b1b}
-.pill.do-not-call{background:#7f1d1d;color:#fff}
-#cloud-panel{background:#fff!important;color:#0f172a!important;border:2px solid #94a3b8!important;box-shadow:0 10px 35px #0f172a2b!important}
-#cloud-panel .muted{color:#475569!important}
-#cloud-panel input{background:#fff;color:#0f172a;border-color:#94a3b8}
-#cloud-panel button{background:#eff6ff;color:#1e3a8a;border-color:#93c5fd}
-dialog{background:#fff;color:#0f172a;border:1px solid #cbd5e1}
-@media(max-width:650px){table{min-width:680px}body{font-size:15px}}
-</style></head><body><header><div><strong>dope<span style="color:#a3e635">dialer.</span></strong> <span>by Fenfo</span></div><span>Nationwide prospecting · Browser-based prototype</span></header><main><div class="top"><div><h1 style="margin:0 0 5px;font-size:26px">Your calling command center</h1><div class="muted">Find your next contractor, make the call, log the result, repeat.</div></div><button class="primary" onclick="showAdd()">+ Add contractor</button></div><div class="metrics"><div class="metric"><span class="muted">Total prospects</span><b id="m-total">0</b></div><div class="metric"><span class="muted">Due / overdue follow-ups</span><b id="m-due">0</b></div><div class="metric"><span class="muted">Interested + demos</span><b id="m-hot">0</b></div><div class="metric"><span class="muted">Customers</span><b id="m-customer">0</b></div><div class="metric"><span class="muted">Calls logged today</span><b id="m-calls">0</b></div></div><div class="toolbar"><input id="search" placeholder="Search business, city, ZIP..." oninput="render()" style="flex:2"><select id="state" onchange="render()"><option value="">All states</option></select><input id="city" placeholder="City" oninput="render()"><input id="zip-filter" placeholder="ZIP prefix" maxlength="5" oninput="render()"><select id="status" onchange="render()"><option value="">All statuses</option></select><select id="queue" onchange="render()"><option value="all">All leads</option><option value="new">New only</option><option value="due">Follow-ups due</option><option value="callable">Callable leads</option><option value="today">Not contacted today</option></select><button class="primary" onclick="openPaste()">📋 Paste contractors</button><button onclick="document.getElementById('csv').click()">Import CSV</button><input class="hidden" id="csv" type="file" accept=".csv,text/csv" onchange="importCSV(event)"><button onclick="exportCSV()">Export CSV</button><button onclick="nextLead()" class="primary">Next lead →</button></div><div class="voice-settings"><strong>Calling:</strong><select id="call-mode" onchange="setCallMode(this.value)"><option value="auto">Automatic (desktop/mobile)</option><option value="desktop">Google Voice website</option><option value="mobile">Phone dialer / Google Voice app</option></select><span class="voice-tip">Desktop: copies number and opens Google Voice. Mobile: copies number and offers the phone dialer. Google Voice must be selected as your calling app when supported.</span></div><div class="layout"><section class="panel" style="overflow:auto"><div class="top"><h2>Call list</h2><span class="muted" id="count"></span></div><table><thead><tr><th>Contractor</th><th>Location</th><th>Status</th><th>Next follow-up</th><th>Last note</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty hidden">No contractors match these filters. Add a contractor or import a CSV.</div></section><aside class="panel"><div id="details"><h2>Contractor details</h2><div class="empty">Select a contractor to view call history, take notes, schedule a callback, or click to call.</div></div></aside></div><p class="note">DopeDialer currently saves records in this browser using local storage. Export a CSV backup regularly; clearing browser data will erase your local records. Cloud sync, sign-in, automated contractor discovery, and automatic Google Voice call logging are not connected yet. CSV imports should contain business_name, phone, state, city, zip, website (optional), and contact_name (optional). Only import appropriately sourced business contact data. Do-not-call records are excluded from the callable queue and must be honored.</p></main><dialog id="addDialog"><h2>Add contractor</h2><form method="dialog" id="addForm" onsubmit="addLead(event)"><div class="field"><label>Business name *</label><input name="business_name" required></div><div class="field"><label>Contact name</label><input name="contact_name"></div><div class="field"><label>Phone</label><input name="phone" type="tel"></div><div class="field"><label>City</label><input name="city"></div><div class="field"><label>State (two-letter code)</label><input name="state" maxlength="2"></div><div class="field"><label>ZIP</label><input name="zip"></div><div class="field"><label>Website</label><input name="website"></div><div class="actions"><button type="button" onclick="addDialog.close()">Cancel</button><button class="primary" type="submit">Save contractor</button></div></form></dialog><script>
-const KEY='fenfo_crm_leads_v1';const MODE_KEY='fenfo_crm_call_mode_v1';const statuses=['New','Call soon','Interested','Follow-up','Demo scheduled','Customer','Not interested','Do not call'];const states='AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC'.split(' ');let leads=[];let selected=null;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const cls=s=>String(s).toLowerCase().replace(/ /g,'-');const dateToday=()=>new Date().toISOString().slice(0,10);const uid=()=>globalThis.crypto?.randomUUID?.()||String(Date.now()+Math.random());function load(){try{leads=JSON.parse(localStorage.getItem(KEY)||'[]')}catch{leads=[]}}function save(){localStorage.setItem(KEY,JSON.stringify(leads));render()}function getSelected(){return leads.find(x=>x.id===selected)}function norm(x){return {id:x.id||uid(),business_name:x.business_name||x.name||'',contact_name:x.contact_name||'',phone:x.phone||'',city:x.city||'',state:(x.state||'').toUpperCase(),zip:x.zip||'',website:x.website||'',status:x.status||'New',followup:x.followup||'',notes:x.notes||[],last_contact:x.last_contact||''}}function render(){const s=$('state').value;const q=$('search').value.trim().toLowerCase();const city=$('city').value.trim().toLowerCase();const zip=$('zip-filter').value.trim();const status=$('status').value;const queue=$('queue').value;const now=dateToday();const filtered=leads.filter(x=>(!s||x.state===s)&&(!city||x.city.toLowerCase().includes(city))&&(!zip||x.zip.startsWith(zip))&&(!status||x.status===status)&&(!q||[x.business_name,x.contact_name,x.city,x.state,x.zip,x.phone].join(' ').toLowerCase().includes(q))&&(queue==='all'||queue==='new'&&x.status==='New'||queue==='due'&&x.followup&&x.followup.slice(0,10)<=now&&x.status!=='Do not call'||queue==='callable'&&!['Do not call','Customer','Not interested'].includes(x.status)||queue==='today'&&(!x.last_contact||x.last_contact.slice(0,10)!==now)&&!['Do not call','Customer','Not interested'].includes(x.status))).sort((a,b)=>{const score=x=>x.followup&&x.followup.slice(0,10)<=now?0:x.status==='Interested'?1:x.status==='Call soon'?2:x.status==='New'?3:4;return score(a)-score(b)||a.business_name.localeCompare(b.business_name)});$('m-calls').textContent=leads.reduce((n,x)=>n+x.notes.filter(y=>y.at?.slice(0,10)===now&&/^(Call:|Call outcome:)/.test(y.text)).length,0);$('m-total').textContent=leads.length;$('m-due').textContent=leads.filter(x=>x.followup&&x.followup.slice(0,10)<=now&&x.status!=='Do not call').length;$('m-hot').textContent=leads.filter(x=>['Interested','Demo scheduled'].includes(x.status)).length;$('m-customer').textContent=leads.filter(x=>x.status==='Customer').length;$('count').textContent=filtered.length+' shown';$('rows').innerHTML=filtered.map(x=>`<tr data-id="${esc(x.id)}" class="data ${x.id===selected?'selected':''}" onclick="selectLead('${x.id}')"><td><strong>${esc(x.business_name)}</strong><div class="muted">${esc(x.contact_name||x.phone)}</div></td><td>${esc([x.city,x.state].filter(Boolean).join(', '))}</td><td><span class="pill ${cls(x.status)}">${esc(x.status)}</span></td><td>${esc(x.followup?new Date(x.followup).toLocaleString():'—')}</td><td style="max-width:190px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(x.notes.at(-1)?.text||'—')}</td></tr>`).join('');$('empty').classList.toggle('hidden',filtered.length>0);renderDetails()}function selectLead(id){selected=id;render()}function nextLead(){const ids=[...document.querySelectorAll('#rows tr.data')].map(r=>r.getAttribute('data-id'));if(!ids.length){alert('No matching leads in this queue.');return}const i=ids.indexOf(selected);selected=ids[(i+1)%ids.length];render();document.querySelector('#details')?.scrollIntoView({behavior:'smooth',block:'nearest'})}function renderDetails(){const x=getSelected();if(!x){$('details').innerHTML='<h2>Contractor details</h2><div class="empty">Select a contractor to start working.</div>';return}const callable=Boolean(x.phone)&&!['Do not call','Customer','Not interested'].includes(x.status);$('details').innerHTML=`<h2>${esc(x.business_name)}</h2><div class="muted" style="margin-bottom:12px">${esc([x.city,x.state,x.zip].filter(Boolean).join(' · '))}</div><div class="detail-actions"><button class="call-btn" ${callable?'':'disabled'} onclick="startCall()">☎ Call with Google Voice</button><button onclick="copyPhone()" ${x.phone?'':'disabled'}>Copy number</button><button onclick="logCall()" ${x.status==='Do not call'?'disabled':''}>Log call</button></div><div id="call-guidance" class="call-banner hidden" role="status"></div><div class="outcome-bar">${['No answer','Voicemail','Connected','Interested','Follow-up','Demo scheduled','Do not call'].map(o=>`<button ${x.status==='Do not call'?'disabled':''} onclick="quickOutcome('${o}')">${o}</button>`).join('')}</div><div class="field"><label>Contact name</label><input id="d-contact" value="${esc(x.contact_name)}"></div><div class="field"><label>Phone</label><input id="d-phone" value="${esc(x.phone)}"></div><div class="field"><label>Website</label><input id="d-website" value="${esc(x.website)}"></div><div class="field"><label>Lead status</label><select id="d-status">${statuses.map(st=>`<option ${st===x.status?'selected':''}>${esc(st)}</option>`).join('')}</select></div><div class="field"><label>Follow-up date and time</label><input id="d-followup" type="datetime-local" value="${esc(x.followup)}"></div><div class="field"><label>Add a note</label><textarea id="d-note" placeholder="What happened on the call? Next step?"></textarea></div><button class="primary" style="width:100%" onclick="saveDetails()">Save changes + note</button><div style="margin-top:12px;padding-top:12px;border-top:1px solid #dbe2ec"><button id="delete-lead-btn" type="button" onclick="deleteSelectedLead()" style="width:100%;color:#b42318;border:1px solid #f2b8b5;background:#fff7f7">🗑 Delete contractor</button></div><h3 style="font-size:14px;margin-top:24px">Activity history</h3><div class="history">${x.notes.length?x.notes.slice().reverse().map(n=>`<div class="entry"><span class="muted">${esc(new Date(n.at).toLocaleString())}</span><div>${esc(n.text)}</div></div>`).join(''):'<div class="muted">No activity recorded yet.</div>'}</div>`}function saveDetails(){const x=getSelected();if(!x)return;const status=$('d-status').value;x.contact_name=$('d-contact').value.trim();x.phone=$('d-phone').value.trim();x.website=$('d-website').value.trim();x.status=status;x.followup=status==='Do not call'?'':$('d-followup').value;const note=$('d-note').value.trim();if(note)x.notes.push({at:new Date().toISOString(),text:note});save()}let deletingLead=false;
-async function deleteSelectedLead(){
-  const x=getSelected();if(!x||deletingLead)return;
-  const label=x.business_name||'this contractor';
-  if(!confirm(`Permanently delete "${label}" and its notes/call history?\n\nThis cannot be undone.`))return;
-  deletingLead=true;
-  const btn=document.getElementById('delete-lead-btn');if(btn){btn.disabled=true;btn.textContent='Deleting…'}
-  try{
-    // Stop a scheduled upload, and wait for an already-running upload to finish.
-    clearTimeout(window.__cloudTimer);
-    if(cloudSession){
-      const deadline=Date.now()+20000;
-      while(cloudBusy && Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,100));
-      if(cloudBusy)throw Error('Cloud sync is still running. Try again in a moment.');
-      const c=cloudCfg(),token=await cloudToken();
-      const response=await fetch(c.url+'/rest/v1/leads?id=eq.'+encodeURIComponent(x.id),{
-        method:'DELETE',headers:{...cloudHeaders(token),'Prefer':'return=representation'}
-      });
-      if(!response.ok)throw Error('Supabase deletion failed ('+response.status+'): '+(await response.text()).slice(0,160));
-      const removed=await response.json();
-      if(!removed.length)throw Error('Supabase did not confirm deleting this record. No local changes were made.');
-    }
-    leads=leads.filter(item=>item.id!==x.id);
-    selected=null;
-    localStorage.setItem(KEY,JSON.stringify(leads));
-    render();
-    if(cloudSession){cloudStatus('Synced');cloudMessage('Contractor deleted from Supabase and this browser.')} 
-    else alert('Contractor deleted from this browser. You are not signed in to cloud sync.');
-  }catch(error){alert('Could not delete contractor: '+error.message+'\nNo local record was deleted.');}
-  finally{deletingLead=false;const current=document.getElementById('delete-lead-btn');if(current){current.disabled=false;current.textContent='🗑 Delete contractor'}}
-}
-function logCall(){const x=getSelected();if(!x)return;const outcome=prompt('Call outcome (e.g. voicemail, no answer, connected):');if(outcome===null)return;x.last_contact=new Date().toISOString();x.notes.push({at:x.last_contact,text:'Call: '+(outcome.trim()||'Attempted')});save()}function setCallMode(mode){localStorage.setItem(MODE_KEY,mode)}
-function currentMode(){const choice=$('call-mode').value;return choice==='auto'?(matchMedia('(pointer:coarse)').matches?'mobile':'desktop'):choice}
-function cleanPhone(phone){return String(phone||'').replace(/[^0-9+]/g,'')}
-async function copyPhone(){const x=getSelected();if(!x?.phone)return;try{await navigator.clipboard.writeText(x.phone);showCallGuidance('Number copied: '+esc(x.phone))}catch{showCallGuidance('Copy this number manually: '+esc(x.phone))}}
-function showCallGuidance(html){const el=$('call-guidance');if(!el)return;el.innerHTML=html;el.classList.remove('hidden')}
-function startCall(){const x=getSelected();if(!x||!x.phone||['Do not call','Customer','Not interested'].includes(x.status))return;const phone=cleanPhone(x.phone);if(!phone)return;const mode=currentMode();if(mode==='desktop'){
-  // Open synchronously in direct click handler to avoid popup blockers.
-  const w=window.open('https://voice.google.com/u/0/calls','_blank','noopener,noreferrer');
-  if(!w)showCallGuidance('Popup blocked. <a href="https://voice.google.com/u/0/calls" target="_blank" rel="noopener noreferrer">Open Google Voice</a> and dial '+esc(phone)+'.');
-  else showCallGuidance('Google Voice opened. Paste or dial <strong>'+esc(phone)+'</strong>. After the call, choose an outcome below.');
-  if(navigator.clipboard?.writeText)navigator.clipboard.writeText(phone).catch(()=>{});
-}else{
-  showCallGuidance('Use Google Voice if your phone offers it as a calling option. Otherwise, the system phone dialer may be used. Number: <strong>'+esc(phone)+'</strong>. <a href="tel:'+encodeURIComponent(phone)+'">Open phone dialer</a>. Google Voice app selection is controlled by your phone, not this CRM.');
-  if(navigator.clipboard?.writeText)navigator.clipboard.writeText(phone).catch(()=>{});
-}
-}
-function quickOutcome(outcome){const x=getSelected();if(!x||x.status==='Do not call')return;const now=new Date().toISOString();x.last_contact=now;x.notes.push({at:now,text:'Call outcome: '+outcome});if(outcome==='Interested')x.status='Interested';if(outcome==='Follow-up')x.status='Follow-up';if(outcome==='Demo scheduled')x.status='Demo scheduled';if(outcome==='Do not call'){x.status='Do not call';x.followup=''}if(outcome==='No answer'||outcome==='Voicemail')x.status='Call soon';save();}
-function showAdd(){$('addForm').reset();$('addDialog').showModal()}function addLead(e){e.preventDefault();const fd=new FormData($('addForm'));const x=norm(Object.fromEntries(fd));leads.push(x);selected=x.id;save();$('addDialog').close()}function parseCSV(text){let rows=[],row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){cell+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cell);if(row.some(Boolean))rows.push(row);row=[];cell=''}else cell+=c}row.push(cell);if(row.some(Boolean))rows.push(row);return rows}async function importCSV(e){const file=e.target.files[0];if(!file)return;const rows=parseCSV(await file.text());const keys=rows.shift()?.map(x=>x.trim().toLowerCase())||[];let added=0;const known=new Set(leads.flatMap(x=>[x.phone.replace(/\D/g,''),x.business_name.toLowerCase().trim()+'|'+x.state].filter(Boolean)));for(const row of rows){const obj=Object.fromEntries(keys.map((k,i)=>[k,row[i]||'']));if(!obj.business_name&&!obj.name)continue;const x=norm(obj);const k=x.phone.replace(/\D/g,'')||x.business_name.toLowerCase()+'|'+x.state;if(known.has(k)||known.has(x.business_name.toLowerCase().trim()+'|'+x.state))continue;known.add(k);known.add(x.business_name.toLowerCase().trim()+'|'+x.state);leads.push(x);added++}e.target.value='';save();alert(`Imported ${added} new contractors. ${rows.length-added} skipped (duplicates or missing names).`)}function exportCSV(){const keys=['business_name','contact_name','phone','city','state','zip','website','status','followup','last_contact','notes'];const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const data=[keys.join(','),...leads.map(x=>keys.map(k=>quote(k==='notes'?x.notes.map(n=>n.at+': '+n.text).join(' | '):x[k])).join(','))].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'text/csv'}));a.download='dopedialer-export.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}$('state').innerHTML+=[...states].map(s=>`<option>${s}</option>`).join('');$('status').innerHTML+=statuses.map(s=>`<option>${s}</option>`).join('');$('call-mode').value=localStorage.getItem(MODE_KEY)||'auto';load();render();
-</script>
-<style>
-#cloud-panel{position:fixed;right:16px;bottom:16px;z-index:99;width:min(350px,calc(100vw - 32px));background:#111827;color:white;border-radius:14px;padding:14px;box-shadow:0 10px 35px #0004;font:13px system-ui}#cloud-panel input{width:100%;min-width:0;margin:4px 0;color:#111827}#cloud-panel button{padding:7px 10px;margin:3px;font-size:12px}#cloud-panel summary{cursor:pointer;font-weight:700}#cloud-panel .muted{color:#cbd5e1}
-</style>
-<details id="cloud-panel"><summary>☁ Cloud Sync · <span id="cloud-status">Local only</span></summary><p class="muted">Connect Supabase to securely sync your leads across devices. Use only your public anon/publishable key.</p><input id="sb-url" placeholder="https://your-project.supabase.co" autocomplete="url"><input id="sb-key" placeholder="Supabase publishable / anon key" autocomplete="off"><input id="sb-email" type="email" placeholder="Email"><input id="sb-password" type="password" placeholder="Password"><div><button onclick="cloudSignUp()">Sign up</button><button onclick="cloudSignIn()">Sign in</button><button onclick="cloudSignOut()">Sign out</button><button onclick="cloudPull()">Refresh</button></div><div class="muted" id="cloud-message">Export a CSV backup before your first sync.</div></details>
+body:not(.dd-authenticated) main.shell{display:none!important}
+#dd-login{display:none;min-height:100vh;align-items:center;justify-content:center;padding:24px}
+body:not(.dd-authenticated) #dd-login{display:flex}
+#dd-login .dd-card{width:min(100%,420px);background:#172237;border:1px solid #34445d;border-radius:18px;padding:28px}
+#dd-login input{display:block;width:100%;box-sizing:border-box;margin:8px 0 16px;padding:12px}
+#dd-login .dd-card button{margin:4px 5px 4px 0}
+#dd-login h1{font-size:30px;margin:0 0 8px}
+#dd-login .dd-status{margin-top:12px;min-height:20px;white-space:pre-wrap}
+</style></head><body><section id="dd-login"><div class="dd-card"><h1>dope<span style="color:#a5e761">dialer.</span></h1><p class="muted">Sign in to your CRM or create an account.</p><label for="dd-email">Email</label><input id="dd-email" type="email" autocomplete="username" placeholder="you@example.com"><label for="dd-pass">Password</label><input id="dd-pass" type="password" autocomplete="current-password" placeholder="Your password"><button class="primary" onclick="ddSignIn()">Sign in</button><button onclick="ddSignUp()">Create account</button><p class="dd-status muted" id="dd-status" role="status"></p><p class="muted" style="font-size:12px">Your leads and tasks are private to your account.</p></div></section><main class="shell"><header class="top"><div><h1>dope<span style="color:#a5e761">dialer.</span> <span class="muted">v3.8 · Fenfo</span></h1><div class="muted">Call. Capture. Follow up. Never lose a note.</div></div><div class="actions"><span id="save-state" class="save">Local ready</span><button onclick="cloudSignOut()">Sign out</button><button onclick="exportJSON()">Backup JSON</button><button onclick="exportCSV()">Export CSV</button></div></header><section class="metrics"><div class="metric"><span class="muted">All leads</span><b id="m-total">0</b></div><div class="metric"><span class="muted">Called today</span><b id="m-today">0</b></div><div class="metric"><span class="muted">Due / overdue</span><b id="m-due">0</b></div><div class="metric"><span class="muted">Interested / demos</span><b id="m-hot">0</b></div></section><nav id="tabs" class="tabs"></nav><div id="subtabs" class="subtabs"></div><div class="toolbar"><input id="search" placeholder="Search company, city, contact, phone..." oninput="renderList()"><select id="state-filter" onchange="renderList()"><option value="">All states</option></select><button class="primary" onclick="openPaste()">📋 Paste contractors</button><button onclick="openAdd()">+ Add lead</button><button onclick="nextLead()">Next lead →</button></div><div class="actions"><button onclick="openTask()">+ Add Task</button><span id="task-summary" class="muted"></span></div><div class="layout"><section class="panel"><div class="top"><h2 id="list-title">To Call</h2><span id="count" class="muted"></span></div><div class="list" id="lead-list"></div></section><section class="panel" id="detail"><div class="muted">Select a contractor to begin.</div></section></div><dialog id="task-dialog"><h2 id="task-dialog-title">Add task</h2><div class="field"><label>What needs to get done? *</label><input id="task-title" placeholder="Send Fenfo demo video"></div><div class="field"><label>Contractor (optional — leave blank for general task)</label><select id="task-lead"></select></div><div class="grid2"><div class="field"><label>Due date and time</label><div class="date-time-pair"><input id="task-date" type="date" aria-label="Task due date" onclick="openPicker(this)"><input id="task-time" type="time" aria-label="Task due time" onclick="openPicker(this)"></div></div><div class="field"><label>Priority</label><select id="task-priority"><option>Normal</option><option>High</option><option>Low</option></select></div></div><div class="field"><label>Video / resource URL (optional)</label><input id="task-url" placeholder="https://youtube.com/..."></div><div class="field"><label>Details (optional)</label><textarea id="task-notes" placeholder="What did they ask you to send?"></textarea></div><div class="actions"><button onclick="closeDialog('task-dialog')">Cancel</button><button class="primary" onclick="saveTask()">Save task</button></div></dialog>
+<section id="task-view" class="panel hidden" style="margin-top:14px"><div class="top"><div><h2>My Tasks</h2><div class="muted">Contractor tasks and general to-dos, all in one place.</div></div><button class="primary" onclick="openTask()">+ Add task</button></div><div id="task-filters" class="task-filter"></div><div id="task-list"></div></section><p class="muted" style="margin-top:15px">Google Voice is a manual handoff; opening it does not prove a call occurred. Log outcomes yourself. Respect do-not-call requests. Data saves locally immediately and syncs to Supabase when connected.</p></main>
+<dialog id="paste-dialog"><h2>Paste contractor list</h2><p class="muted">One per line: <b>Company | City, ST | Phone | Website</b>. Tabs and CSV also supported. Preview duplicates before import.</p><textarea id="paste-text" style="min-height:190px" oninput="previewPaste()" placeholder="Acme Fence | Lima, OH | 4195550100 | https://example.com"></textarea><div id="paste-preview" class="banner"></div><div class="actions"><button onclick="closeDialog('paste-dialog')">Cancel</button><button class="primary" onclick="commitPaste()">Import valid leads</button></div></dialog>
+<dialog id="add-dialog"><h2>Add contractor</h2><div class="field"><label>Company</label><input id="add-name"></div><div class="grid2"><div class="field"><label>City</label><input id="add-city"></div><div class="field"><label>State</label><input id="add-state" value="OH"></div></div><div class="field"><label>Phone</label><input id="add-phone"></div><div class="field"><label>Website</label><input id="add-website" type="url"></div><div class="field"><label>Contact email</label><input id="add-email" type="email" placeholder="name@company.com"></div><div class="actions"><button onclick="closeDialog('add-dialog')">Cancel</button><button class="primary" onclick="addLead()">Save</button></div></dialog>
+<dialog id="settings-dialog" aria-hidden="true"><input id="sb-url"><input id="sb-key"><input id="sb-email"><input id="sb-password"><div id="cloud-msg"></div></dialog>
 <script>
-const CLOUD_CONFIG='dopedialer_cloud_config_v1',CLOUD_SESSION='dopedialer_cloud_session_v1';
-let cloudSession=null, cloudBusy=false;
-function cloudCfg(){return {url:document.getElementById('sb-url').value.trim().replace(/\/$/,''),key:document.getElementById('sb-key').value.trim()}}
-function cloudMessage(message){document.getElementById('cloud-message').textContent=message}
-function cloudStatus(message){document.getElementById('cloud-status').textContent=message}
-function cloudSaveConfig(){localStorage.setItem(CLOUD_CONFIG,JSON.stringify(cloudCfg()))}
-function cloudHeaders(token){const c=cloudCfg();return {'apikey':c.key,...(token?{'Authorization':'Bearer '+token}:{}),'Content-Type':'application/json'}}
-async function cloudAuth(endpoint){const c=cloudCfg();if(!/^https:\/\/[^/]+\.supabase\.co$/.test(c.url)||!c.key)throw Error('Enter a valid Supabase project URL and public key.');cloudSaveConfig();const r=await fetch(c.url+'/auth/v1/'+endpoint,{method:'POST',headers:cloudHeaders(),body:JSON.stringify({email:document.getElementById('sb-email').value.trim(),password:document.getElementById('sb-password').value})});const d=await r.json();if(!r.ok)throw Error(d.msg||d.error_description||d.message||'Authentication failed');return d}
-async function cloudSignUp(){try{const d=await cloudAuth('signup');cloudMessage(d.access_token?'Account created. Sign in to sync.':'Account created. Check your email to confirm, then sign in.')}catch(e){cloudMessage(e.message)}}
-async function cloudSignIn(){try{const d=await cloudAuth('token?grant_type=password');cloudSession=d;sessionStorage.setItem(CLOUD_SESSION,JSON.stringify(d));cloudStatus('Connected');cloudMessage('Signed in. Syncing...');await cloudPull(true);await cloudPush();cloudMessage('Cloud sync active.')}catch(e){cloudMessage(e.message);cloudStatus('Sync error')}}
-function cloudSignOut(){cloudSession=null;sessionStorage.removeItem(CLOUD_SESSION);cloudStatus('Local only');cloudMessage('Signed out. Local data remains on this browser.')}
-async function cloudToken(){if(!cloudSession)throw Error('Sign in first');if(Date.now()/1000 < cloudSession.expires_at-60)return cloudSession.access_token;const c=cloudCfg();const r=await fetch(c.url+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:cloudHeaders(),body:JSON.stringify({refresh_token:cloudSession.refresh_token})});const d=await r.json();if(!r.ok)throw Error('Session expired. Sign in again.');cloudSession=d;sessionStorage.setItem(CLOUD_SESSION,JSON.stringify(d));return d.access_token}
-async function cloudPull(merge=false){if(!cloudSession){cloudMessage('Sign in first.');return}try{const c=cloudCfg();const token=await cloudToken();const r=await fetch(c.url+'/rest/v1/leads?select=data&limit=10000',{headers:cloudHeaders(token)});if(!r.ok)throw Error('Download failed: '+r.status);const rows=await r.json();const remote=rows.map(row=>norm(row.data));if(merge){const map=new Map(remote.map(x=>[x.id,x]));for(const x of leads)map.set(x.id,x);leads=[...map.values()]}else{leads=remote}localStorage.setItem(KEY,JSON.stringify(leads));render();cloudStatus('Connected');cloudMessage('Loaded '+remote.length+' cloud leads.')}catch(e){cloudStatus('Sync error');cloudMessage(e.message)}}
-let cloudPending=null;
-async function cloudPush(){if(!cloudSession||deletingLead)return;if(cloudBusy){cloudPending=true;return}cloudBusy=true;try{const c=cloudCfg();const token=await cloudToken();const user=cloudSession.user?.id;if(!user)throw Error('Missing account identity');const payload=leads.map(x=>({id:x.id,user_id:user,data:x,updated_at:new Date().toISOString()}));for(let i=0;i<payload.length;i+=200){const r=await fetch(c.url+'/rest/v1/leads?on_conflict=id',{method:'POST',headers:{...cloudHeaders(token),'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify(payload.slice(i,i+200))});if(!r.ok)throw Error('Upload failed: '+r.status+' '+(await r.text()).slice(0,120))}cloudStatus('Synced');cloudMessage('Saved '+leads.length+' leads to cloud.')}catch(e){cloudStatus('Sync error');cloudMessage(e.message)}finally{cloudBusy=false;if(cloudPending){cloudPending=false;cloudPush()}}}
-const originalSave=save;save=function(){originalSave();if(cloudSession){cloudStatus('Saving…');clearTimeout(window.__cloudTimer);window.__cloudTimer=setTimeout(cloudPush,450)}};
-try{const cfg=JSON.parse(localStorage.getItem(CLOUD_CONFIG)||'{}');document.getElementById('sb-url').value=cfg.url||'https://uorawjfcbwljwrfkmoaq.supabase.co';document.getElementById('sb-key').value=cfg.key||'sb_publishable_jrXjx8nqXiXL17tD3PMOmQ_igpA6wXr';cloudSession=JSON.parse(sessionStorage.getItem(CLOUD_SESSION)||'null');if(cloudSession){cloudStatus('Reconnecting…');cloudPull()}}catch(e){cloudMessage('Configuration could not be loaded.')}
-</script>
+'use strict';
+function localNow(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}T${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`}
+function openPicker(el){try{if(typeof el.showPicker==='function')el.showPicker()}catch(e){/* Browser's native date/time control remains usable */}}
+function setDateTimeFields(dateId,timeId,value){const v=value||localNow();$(dateId).value=v.slice(0,10);$(timeId).value=v.slice(11,16)}
+function readDateTimeFields(dateId,timeId){const d=$(dateId).value,t=$(timeId).value;return d&&t?d+'T'+t:''}
+function saveFollowupFields(){const x=getLead();if(!x)return;const due=readDateTimeFields('follow-date','follow-time');if(due){fieldChange('followup',due);renderList();renderTasks()}}
+function clearFollowup(){fieldChange('followup','');render()}
+let KEY='dopedialer_v3_leads',CFG='dopedialer_v3_cfg',AUTH='dopedialer_v3_auth';const $=id=>document.getElementById(id),uid=()=>crypto.randomUUID(),iso=()=>new Date().toISOString(),today=()=>new Date().toLocaleDateString('en-CA'),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const statuses=['New','No answer','Voicemail','Connected','Interested','Follow-up','Demo scheduled','Customer','Not interested','Do not call'];let leads=[],selected=null,tab='queue',sub='all',draftTimer=null,cloudTimer=null,cloudSession=null,cloudQueue=new Set(),cloudBusy=false;const norm=x=>({id:x.id||uid(),business_name:x.business_name||x.name||'',contact_name:x.contact_name||'',phone:x.phone||'',city:x.city||'',state:(x.state||'').toUpperCase(),zip:x.zip||'',website:x.website||'',email:x.email||'',status:x.status||'New',followup:x.followup||'',notes:Array.isArray(x.notes)?x.notes:[],tasks:Array.isArray(x.tasks)?x.tasks:[],draft:x.draft||'',last_contact:x.last_contact||'',call_count:Number(x.call_count)||0,updated_at:x.updated_at||iso()});
+function load(){try{leads=(JSON.parse(localStorage.getItem(KEY)||'[]')).map(norm)}catch{leads=[]}try{cloudSession=JSON.parse(sessionStorage.getItem(AUTH)||'null')}catch{}}function localSave(){try{localStorage.setItem(KEY,JSON.stringify(leads));$('save-state').textContent=cloudSession?'Saved locally · syncing':'Saved locally';$('save-state').className='save'}catch(e){$('save-state').textContent='Local save failed: '+e.message;$('save-state').className='warn'}}function updateLead(x){x.updated_at=iso();localSave();if(cloudSession){cloudQueue.add(x.id);scheduleCloud()}}function scheduleCloud(){clearTimeout(cloudTimer);cloudTimer=setTimeout(flushCloud,700)}function isToday(d){return !!d&&new Date(d).toLocaleDateString('en-CA')===today()}function isDue(x){return !!x.followup&&new Date(x.followup).getTime()<=Date.now()&&x.status!=='Do not call'}function eligible(x){return !['Do not call','Customer','Not interested'].includes(x.status)}
+function renderTabs(){const items=[['queue','To Call'],['today','Called Today'],['follow','Follow-ups'],['history','All Calls'],['all','All Leads']];$('tabs').innerHTML=items.map(([k,l])=>`<button class="${tab===k?'active':''}" onclick="setTab('${k}')">${l}</button>`).join('');const choices=tab==='follow'?['all','Overdue','Today','Upcoming']:tab==='today'||tab==='history'?['all','No answer','Voicemail','Connected','Interested','Follow-up','Demo scheduled']:tab==='queue'?['all','New','No answer','Voicemail','Connected']:['all',...statuses];$('subtabs').innerHTML=choices.map(k=>`<button class="${sub===k?'active':''}" onclick="setSub('${esc(k)}')">${k==='all'?'All':esc(k)}</button>`).join('');$('list-title').textContent=items.find(x=>x[0]===tab)[1]}
+function setTab(t){captureDraft();tab=t;sub='all';render()}function setSub(s){captureDraft();sub=s;render()}function matches(x){const q=$('search').value.toLowerCase().trim(),s=$('state-filter').value;if(s&&x.state!==s)return false;if(q&&![x.business_name,x.contact_name,x.city,x.state,x.phone,x.zip].join(' ').toLowerCase().includes(q))return false;if(tab==='queue'&&(!eligible(x)||isToday(x.last_contact)||x.followup))return false;if(tab==='today'&&!isToday(x.last_contact))return false;if(tab==='follow'&&(!x.followup||!eligible(x)))return false;if(tab==='history'&&!x.last_contact)return false;if(sub!=='all'){if(tab==='follow'){const d=new Date(x.followup);if(sub==='Overdue'&&!(d<new Date()&&!isToday(x.followup)))return false;if(sub==='Today'&&!isToday(x.followup))return false;if(sub==='Upcoming'&&d<=new Date())return false}else if(x.status!==sub)return false}return true}
+function phoneDisplay(raw){const d=String(raw||'').replace(/\D/g,'');const n=d.length===11&&d[0]==='1'?d.slice(1):d;if(n.length===10)return '('+n.slice(0,3)+') '+n.slice(3,6)+'-'+n.slice(6);return String(raw||'')}
+function phoneHref(raw){const d=String(raw||'').replace(/\D/g,'');if(d.length===10)return 'tel:+1'+d;if(d.length===11&&d[0]==='1')return 'tel:+'+d;return ''}
+function phoneLink(raw){const href=phoneHref(raw),display=phoneDisplay(raw);return href?'<span class="phone-detect" data-phone-number="'+esc(display)+'"><a class="phone-link" href="'+href+'" onclick="event.stopPropagation()" title="Call '+esc(display)+'">'+esc(display)+'</a></span>':esc(raw||'No phone')}function renderList(){const a=leads.filter(matches).sort((x,y)=>tab==='follow'?new Date(x.followup)-new Date(y.followup):tab==='today'||tab==='history'?new Date(y.last_contact)-new Date(x.last_contact):x.business_name.localeCompare(y.business_name));$('count').textContent=a.length+' leads';$('lead-list').innerHTML=a.length?a.map(x=>`<div class="lead ${selected===x.id?'selected':''}" onclick="choose('${x.id}')"><div class="leadrow"><strong>${esc(x.business_name)}</strong><span class="tag">${esc(x.status)}</span></div><div class="muted">${esc([x.city,x.state].filter(Boolean).join(', '))}<div class="phone-line">☎ ${phoneLink(x.phone)}</div></div><div class="muted">${x.last_contact?'Last called: '+new Date(x.last_contact).toLocaleString():'Never called'}${x.followup?' · Follow-up: '+new Date(x.followup).toLocaleString():''}</div></div>`).join(''):'<div class="muted" style="padding:25px">No leads in this view.</div>'}
+function render(){renderTabs();$('m-total').textContent=leads.length;$('m-today').textContent=leads.filter(x=>isToday(x.last_contact)).length;$('m-due').textContent=leads.filter(isDue).length;$('m-hot').textContent=leads.filter(x=>['Interested','Demo scheduled'].includes(x.status)).length;const st=$('state-filter').value;const states=[...new Set(leads.map(x=>x.state).filter(Boolean))].sort();$('state-filter').innerHTML='<option value="">All states</option>'+states.map(x=>`<option>${esc(x)}</option>`).join('');$('state-filter').value=st;renderList();renderDetail()}
+function choose(id){captureDraft();selected=id;renderList();renderDetail()}function getLead(){return leads.find(x=>x.id===selected)}function captureDraft(){const x=getLead(),el=$('d-draft');if(x&&el&&x.draft!==el.value){x.draft=el.value;updateLead(x)}}function fieldChange(field,value){const x=getLead();if(!x)return;x[field]=value;updateLead(x);if(field==='status'||field==='followup')renderList()}
+function renderDetail(){const x=getLead();if(!x){$('detail').innerHTML='<h2>Contractor details</h2><div class="muted">Select a contractor to begin.</div>';return}const history=x.notes.slice().reverse();$('detail').innerHTML=`<div class="top"><div><h2>${esc(x.business_name)}</h2><div class="muted">${esc([x.city,x.state,x.zip].filter(Boolean).join(' · '))}</div></div><span id="draft-indicator" class="save">Autosave on</span></div><div class="phone-line">☎ ${phoneLink(x.phone)}</div><div class="muted" style="margin:12px 0">Last called: ${x.last_contact?new Date(x.last_contact).toLocaleString():'Never'} · Calls logged: ${x.call_count||x.notes.filter(n=>/^Call:|^Call outcome:/.test(n.text)).length}</div><div class="actions"><button class="primary" onclick="startCall()" ${!x.phone||!eligible(x)?'disabled':''}>☎ Google Voice</button><button onclick="copyPhone()" ${!x.phone?'disabled':''}>Copy number</button><button onclick="logCall()" ${x.status==='Do not call'?'disabled':''}>Log call</button></div><div class="field"><label>Live notes · autosaved while typing</label><textarea id="d-draft" oninput="draftChanged(this.value)" placeholder="Type while speaking. Your notes are preserved even when you change status.">${esc(x.draft)}</textarea></div><div class="grid2"><div class="field"><label>Contact name</label><input value="${esc(x.contact_name)}" oninput="fieldChange('contact_name',this.value)"></div><div class="field"><label>Phone</label><input value="${esc(x.phone)}" oninput="fieldChange('phone',this.value)"></div><div class="field"><label>Website</label><input type="url" value="${esc(x.website)}" oninput="fieldChange('website',this.value)" placeholder="https://company.com"></div><div class="field"><label>Contact email</label><input type="email" value="${esc(x.email)}" oninput="fieldChange('email',this.value)" placeholder="name@company.com">${/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x.email||'')?`<a class="phone-link" href="mailto:${encodeURIComponent(x.email)}" style="display:inline-block;margin-top:7px">✉ Email contact</a>`:''}</div><div class="field"><label>Status</label><select onchange="captureDraft();fieldChange('status',this.value);renderDetail()">${statuses.map(s=>`<option ${x.status===s?'selected':''}>${s}</option>`).join('')}</select></div></div><div class="field"><label>Next follow-up date & time</label><div class="date-time-pair"><input type="date" id="follow-date" value="${esc((x.followup||localNow()).slice(0,10))}" aria-label="Follow-up date" onclick="openPicker(this)" onchange="saveFollowupFields()"><input type="time" id="follow-time" value="${esc((x.followup||localNow()).slice(11,16))}" aria-label="Follow-up time" onclick="openPicker(this)" onchange="saveFollowupFields()"></div><button style="margin-top:7px" onclick="clearFollowup()">Clear follow-up</button></div><div class="actions"><button onclick="saveNote()">Save note to history</button><button onclick="nextLead()">Save & next →</button></div><h3>Activity history (${history.length})</h3><div class="history">${history.length?history.map(n=>`<div class="entry"><span class="muted">${new Date(n.at).toLocaleString()}</span><div>${esc(n.text)}</div></div>`).join(''):'<p class="muted">No calls or notes logged yet.</p>'}</div>`}
+function draftChanged(v){const x=getLead();if(!x)return;x.draft=v;updateLead(x);$('draft-indicator').textContent='Saved locally'}function saveNote(){captureDraft();const x=getLead();if(!x||!x.draft.trim())return;x.notes.push({at:iso(),text:x.draft.trim()});x.draft='';updateLead(x);renderDetail();renderList()}function outcome(s){captureDraft();const x=getLead();if(!x)return;if(['Follow-up','Demo scheduled'].includes(s)&&!x.followup){x.followup=localNow()}const at=iso(),note=x.draft.trim();x.status=s;x.last_contact=at;x.call_count=(x.call_count||0)+1;x.notes.push({at,text:'Call: '+s+(note?'\n'+note:'')});x.draft='';if(s==='Do not call')x.followup='';updateLead(x);render();showOutcomeNotice('Call logged: '+s+'. Contractor stays open until you choose another lead.')}function logCall(){captureDraft();const s=prompt('Outcome (No answer, Voicemail, Connected, Interested, Follow-up, Demo scheduled):','Connected');if(s===null)return;outcome(statuses.includes(s)?s:'Connected')}
+function nextLead(){captureDraft();const a=leads.filter(matches).sort((x,y)=>x.business_name.localeCompare(y.business_name));if(!a.length){selected=null;render();return}const i=a.findIndex(x=>x.id===selected);selected=a[(i+1)%a.length].id;renderList();renderDetail()}function startCall(){captureDraft();const x=getLead();if(!x||!eligible(x))return;const p=x.phone.replace(/\D/g,'');navigator.clipboard?.writeText(p).catch(()=>{});window.open('https://voice.google.com/u/0/calls','_blank','noopener');alert('Number copied: '+p+'\nPaste it into Google Voice if it is not prefilled. Log the call when finished.')}function copyPhone(){const p=getLead()?.phone||'';navigator.clipboard?.writeText(p).then(()=>alert('Copied '+p)).catch(()=>prompt('Copy phone:',p))}
+function openPaste(){$('paste-dialog').showModal();previewPaste()}function closeDialog(id){$(id).close()}function openAdd(){$('add-dialog').showModal()}function addLead(){const name=$('add-name').value.trim();if(!name)return alert('Company name required');const x=norm({business_name:name,city:$('add-city').value,state:$('add-state').value,phone:$('add-phone').value,website:$('add-website').value,email:$('add-email').value});leads.push(x);updateLead(x);selected=x.id;closeDialog('add-dialog');render()}
+function parsePasted(){return $('paste-text').value.split(/\r?\n/).map(line=>{line=line.trim();if(!line)return null;let parts=line.includes('|')?line.split('|'):line.includes('\t')?line.split('\t'):line.split(',');parts=parts.map(s=>s.trim().replace(/^"|"$/g,''));if(parts[0]?.toLowerCase().includes('company')&&parts[1]?.toLowerCase().includes('city'))return null;let [business_name,location,phone,website]=parts;let city='',state='';if(location){const m=location.match(/^(.*?)(?:,\s*|\s+)([A-Za-z]{2})$/);if(m){city=m[1].trim();state=m[2].toUpperCase()}else city=location}return {business_name,city,state,phone:phone||'',website:website||''}}).filter(Boolean)}function identity(x){const p=(x.phone||'').replace(/\D/g,'').replace(/^1(?=\d{10}$)/,'');return {p:p.length===10?p:'',n:(x.business_name||'').trim().toLowerCase().replace(/[^a-z0-9]/g,'')+'|'+(x.state||'').toUpperCase()}}function analyzePaste(){const seenP=new Set(),seenN=new Set();for(const x of leads){const k=identity(x);if(k.p)seenP.add(k.p);seenN.add(k.n)}const additions=[];let duplicates=0,invalid=0;for(const r of parsePasted()){if(!r.business_name?.trim()){invalid++;continue}const x=norm(r),k=identity(x);if((k.p&&seenP.has(k.p))||seenN.has(k.n)){duplicates++;continue}additions.push(x);if(k.p)seenP.add(k.p);seenN.add(k.n)}return {additions,duplicates,invalid}}function previewPaste(){const a=analyzePaste();$('paste-preview').textContent=`${a.additions.length} new · ${a.duplicates} duplicates · ${a.invalid} invalid. Preview: ${a.additions.slice(0,3).map(x=>x.business_name).join(', ')||'none'}`}function commitPaste(){const a=analyzePaste();if(!a.additions.length)return alert('No new valid leads.');leads.push(...a.additions);localSave();for(const x of a.additions)if(cloudSession)cloudQueue.add(x.id);scheduleCloud();selected=a.additions[0].id;$('paste-text').value='';closeDialog('paste-dialog');render();alert(`Imported ${a.additions.length} leads; skipped ${a.duplicates} duplicates.`)}
+function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),3000)}function exportJSON(){download('dopedialer-backup-'+today()+'.json',JSON.stringify(leads,null,2),'application/json')}function exportCSV(){const cols=['business_name','contact_name','phone','city','state','zip','website','email','status','followup','last_contact','call_count','draft','notes'];const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';download('dopedialer-'+today()+'.csv',[cols.join(','),...leads.map(x=>cols.map(c=>q(c==='notes'?x.notes.map(n=>n.at+' '+n.text).join(' || '):x[c])).join(','))].join('\r\n'),'text/csv')}
+function cfg(){return {url:$('sb-url').value.trim().replace(/\/$/,''),key:$('sb-key').value.trim()}}function headers(token){const c=cfg();return {'apikey':c.key,'Authorization':'Bearer '+(token||c.key),'Content-Type':'application/json'}}function openSettings(){try{const c=JSON.parse(localStorage.getItem(CFG)||'{}');$('sb-url').value=c.url||'';$('sb-key').value=c.key||''}catch{}$('settings-dialog').showModal()}function cloudMsg(s){$('cloud-msg').textContent=s;$('save-state').textContent=s}function storeCfg(){const c=cfg();if(!/^https:\/\/[\w-]+\.supabase\.co$/.test(c.url)||!c.key)throw Error('Enter a valid Supabase URL and public key');localStorage.setItem(CFG,JSON.stringify(c))}async function authCall(endpoint){storeCfg();const r=await fetch(cfg().url+'/auth/v1/'+endpoint,{method:'POST',headers:headers(),body:JSON.stringify({email:$('sb-email').value.trim(),password:$('sb-password').value})});const d=await r.json();if(!r.ok)throw Error(d.msg||d.error_description||d.message||'Sign in failed');return d}async function cloudSignUp(){try{const d=await authCall('signup');cloudMsg(d.access_token?'Account created. Sign in now.':'Account created. Confirm your email, then sign in.')}catch(e){cloudMsg(e.message)}}async function cloudSignIn(){try{const d=await authCall('token?grant_type=password');d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);cloudSession=d;sessionStorage.setItem(AUTH,JSON.stringify(d));cloudMsg('Signed in. Downloading cloud data...');await cloudPull();cloudMsg('Connected. Changes will sync to Supabase.')}catch(e){cloudMsg('Sign-in error: '+e.message)}}function cloudSignOut(){cloudSession=null;sessionStorage.removeItem(AUTH);cloudMsg('Signed out. Local data remains available.')}async function token(){if(!cloudSession)throw Error('Sign in first');if(Date.now()/1000<cloudSession.expires_at-90)return cloudSession.access_token;const r=await fetch(cfg().url+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:headers(),body:JSON.stringify({refresh_token:cloudSession.refresh_token})});const d=await r.json();if(!r.ok)throw Error('Session expired. Sign in again');d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);cloudSession=d;sessionStorage.setItem(AUTH,JSON.stringify(d));return d.access_token}
+async function cloudPull(){try{if(!cloudSession)throw Error('Sign in first');storeCfg();const t=await token();const r=await fetch(cfg().url+'/rest/v1/leads?select=data,updated_at&limit=10000',{headers:headers(t)});if(!r.ok)throw Error('Download error '+r.status+' '+(await r.text()).slice(0,120));const rows=await r.json(),map=new Map(leads.map(x=>[x.id,x]));for(const row of rows){const x=norm(row.data||{}),existing=map.get(x.id);if(!existing||new Date(row.updated_at||x.updated_at)>new Date(existing.updated_at))map.set(x.id,x)}leads=[...map.values()];localSave();render();cloudMsg(`Downloaded ${rows.length} cloud leads. Local records preserved.`)}catch(e){cloudMsg('Sync error: '+e.message)}}async function flushCloud(){if(!cloudSession||cloudBusy||!cloudQueue.size)return;cloudBusy=true;const ids=[...cloudQueue];try{storeCfg();const t=await token(),user=cloudSession.user?.id;if(!user)throw Error('No signed-in user');for(const id of ids){const x=leads.find(v=>v.id===id);if(!x)continue;const r=await fetch(cfg().url+'/rest/v1/leads?on_conflict=id',{method:'POST',headers:{...headers(t),'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify([{id:x.id,user_id:user,data:x,updated_at:x.updated_at}])});if(!r.ok)throw Error('Upload '+r.status+' '+(await r.text()).slice(0,140));cloudQueue.delete(id)}$('save-state').textContent='Synced to Supabase';$('save-state').className='save'}catch(e){$('save-state').textContent='Cloud sync failed — local data retained';$('save-state').className='warn';console.error(e)}finally{cloudBusy=false;if(cloudQueue.size)scheduleCloud()}}
+window.addEventListener('beforeunload',captureDraft);load();render();
+</script><script>
+/* DopeDialer 3.1 — additive task management. Existing lead keys and Google Voice markup unchanged. */
+let TASK_KEY='dopedialer_v31_general_tasks';
+let generalTasks=[],taskFilter='open',editingTask=null;
+try{const stored=JSON.parse(localStorage.getItem(TASK_KEY)||'[]');generalTasks=Array.isArray(stored)?stored:[]}catch{generalTasks=[]}
+function leadTasks(x){if(!Array.isArray(x.tasks))x.tasks=[];return x.tasks}
+function allTasks(){return [...generalTasks.map(t=>({...t,leadId:null})),...leads.flatMap(x=>leadTasks(x).map(t=>({...t,leadId:x.id})))];}
+function saveGeneralTasks(){localStorage.setItem(TASK_KEY,JSON.stringify(generalTasks));}
+function findTask(id){const general=generalTasks.find(t=>t.id===id);if(general)return {task:general,lead:null};for(const x of leads){const task=leadTasks(x).find(t=>t.id===id);if(task)return {task,lead:x}}return null}
+function taskDue(t){return t.due?new Date(t.due).getTime():Infinity}
+function taskLabel(t){const x=leads.find(l=>l.id===t.leadId);return x?x.business_name:'General task'}
+function safeTaskUrl(raw){try{const u=new URL(raw);return ['http:','https:'].includes(u.protocol)?u.href:''}catch{return ''}}
+function taskCard(t){const d=taskDue(t),now=Date.now(),done=!!t.completed,when=t.due?new Date(t.due).toLocaleString():'No due date';const urgency=!done&&d<now?'task-overdue':!done&&isToday(t.due)?'task-today':'';const url=safeTaskUrl(t.url);return `<div class="task-row ${done?'done':''}"><div class="task-head"><strong>${esc(t.title)}</strong><span class="tag">${esc(t.priority||'Normal')}</span></div><div class="muted">${esc(taskLabel(t))} · <span class="${urgency}">${esc(when)}${urgency==='task-overdue'?' · Overdue':''}</span></div>${t.notes?`<div class="small" style="margin-top:7px">${esc(t.notes)}</div>`:''}${url?`<div style="margin-top:7px"><a class="task-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Open attached link</a></div>`:''}<div class="task-actions">${done?`<button onclick="completeTask('${esc(t.id)}',false)">Reopen</button>`:`<button class="primary" onclick="completeTask('${esc(t.id)}',true)">✓ Complete</button>`}<button onclick="editTask('${esc(t.id)}')">Edit</button>${t.leadId?`<button onclick="goToTaskLead('${esc(t.leadId)}')">View contractor</button>`:''}<button class="danger" onclick="deleteTask('${esc(t.id)}')">Delete</button></div></div>`}
+function renderTasks(){const tasks=allTasks(),open=tasks.filter(t=>!t.completed),overdue=open.filter(t=>taskDue(t)<Date.now()),todayTasks=open.filter(t=>isToday(t.due));$('task-summary').textContent=`${open.length} open tasks · ${overdue.length} overdue · ${todayTasks.length} due today`;
+ const view=$('task-view'),layout=document.querySelector('.layout'),subtabs=$('subtabs'),toolbar=document.querySelector('.toolbar');const active=tab==='tasks';view.classList.toggle('hidden',!active);layout.classList.toggle('hidden',active);toolbar.classList.toggle('hidden',active);subtabs.classList.toggle('hidden',active);if(!active)return;
+ const opts=[['open','Open'],['overdue','Overdue'],['today','Today'],['upcoming','Upcoming'],['completed','Completed'],['all','All']];$('task-filters').innerHTML=opts.map(([k,label])=>`<button class="${taskFilter===k?'active':''}" onclick="taskFilter='${k}';renderTasks()">${label}</button>`).join('');const now=Date.now();const visible=tasks.filter(t=>taskFilter==='all'||taskFilter==='completed'&&t.completed||taskFilter==='open'&&!t.completed||taskFilter==='overdue'&&!t.completed&&taskDue(t)<now||taskFilter==='today'&&!t.completed&&isToday(t.due)||taskFilter==='upcoming'&&!t.completed&&taskDue(t)>=now&&!isToday(t.due)).sort((a,b)=>Number(!!a.completed)-Number(!!b.completed)||taskDue(a)-taskDue(b)||a.title.localeCompare(b.title));$('task-list').innerHTML=visible.length?visible.map(taskCard).join(''):'<p class="muted" style="padding:20px">No tasks in this view.</p>';
+}
+function openTask(leadId='',id=null){editingTask=id;const found=id?findTask(id):null;const t=found?.task;$('task-dialog-title').textContent=id?'Edit task':'Add task';$('task-lead').innerHTML='<option value="">General task (no contractor)</option>'+leads.slice().sort((a,b)=>a.business_name.localeCompare(b.business_name)).map(x=>`<option value="${esc(x.id)}">${esc(x.business_name)}</option>`).join('');$('task-lead').value=t?(found.lead?.id||''):leadId;$('task-title').value=t?.title||'';setDateTimeFields('task-date','task-time',t?.due||localNow());$('task-priority').value=t?.priority||'Normal';$('task-url').value=t?.url||'';$('task-notes').value=t?.notes||'';$('task-dialog').showModal();$('task-title').focus()}
+function editTask(id){openTask('',id)}
+function saveTask(){const title=$('task-title').value.trim();if(!title)return alert('Please enter a task name.');const due=readDateTimeFields('task-date','task-time');if(due&&!Number.isFinite(new Date(due).getTime()))return alert('Invalid due date');const leadId=$('task-lead').value;const target=leadId?leads.find(x=>x.id===leadId):null;if(leadId&&!target)return alert('Contractor not found');const url=$('task-url').value.trim();if(url&&!safeTaskUrl(url))return alert('Enter an http:// or https:// link.');const old=editingTask?findTask(editingTask):null;const task={id:old?.task.id||uid(),title,due,priority:$('task-priority').value,url,notes:$('task-notes').value.trim(),created_at:old?.task.created_at||iso(),completed:old?.task.completed||false,completed_at:old?.task.completed_at||''};if(old){if(old.lead){old.lead.tasks=leadTasks(old.lead).filter(t=>t.id!==task.id);updateLead(old.lead)}else{generalTasks=generalTasks.filter(t=>t.id!==task.id);saveGeneralTasks()}}if(target){leadTasks(target).push(task);updateLead(target)}else{generalTasks.push(task);saveGeneralTasks()}closeDialog('task-dialog');render();}
+function completeTask(id,complete){const found=findTask(id);if(!found)return;found.task.completed=complete;found.task.completed_at=complete?iso():'';if(found.lead){found.lead.notes.push({at:iso(),text:(complete?'Task completed: ':'Task reopened: ')+found.task.title});updateLead(found.lead)}else saveGeneralTasks();render()}
+function deleteTask(id){const found=findTask(id);if(!found||!confirm('Delete this task permanently?'))return;if(found.lead){found.lead.tasks=leadTasks(found.lead).filter(t=>t.id!==id);updateLead(found.lead)}else{generalTasks=generalTasks.filter(t=>t.id!==id);saveGeneralTasks()}render()}
+function goToTaskLead(id){selected=id;tab='all';sub='all';render();document.querySelector('.layout').scrollIntoView({behavior:'smooth',block:'start'})}
+const originalRenderTabs31=renderTabs;
+renderTabs=function(){if(tab==='tasks'||tab==='interested'){const old=tab;tab='all';originalRenderTabs31();tab=old}else originalRenderTabs31();const tabs=$('tabs');tabs.insertAdjacentHTML('beforeend',`<button class="${tab==='interested'?'active':''}" onclick="setTab('interested')">Interested</button><button class="${tab==='tasks'?'active':''}" onclick="setTab('tasks')">My Tasks (${allTasks().filter(t=>!t.completed).length})</button>`);if(tab==='interested'){$('list-title').textContent='Interested & demos';$('subtabs').innerHTML='<span class="muted">Contractors marked Interested or Demo scheduled</span>'}if(tab==='tasks')$('subtabs').innerHTML='';};
+const originalMatches31=matches;
+matches=function(x){if(tab==='interested'){const q=$('search').value.toLowerCase().trim(),s=$('state-filter').value;return ['Interested','Demo scheduled'].includes(x.status)&&(!s||x.state===s)&&(!q||[x.business_name,x.contact_name,x.city,x.state,x.phone,x.zip].join(' ').toLowerCase().includes(q))}return originalMatches31(x)};
+const originalRender31=render;
+render=function(){originalRender31();renderTasks()};
+function showOutcomeNotice(message){const d=$('outcome-notice');if(d){d.textContent=message;d.classList.remove('hidden')}}
+const originalRenderDetail31=renderDetail;
+renderDetail=function(){originalRenderDetail31();const x=getLead();if(!x)return;const taskList=leadTasks(x).filter(t=>!t.completed).sort((a,b)=>taskDue(a)-taskDue(b));$('detail').insertAdjacentHTML('beforeend',`<div class="task-panel"><div class="top"><h3>Contractor tasks (${taskList.length})</h3><button onclick="openTask('${esc(x.id)}')">+ Add Task</button></div>${taskList.length?taskList.map(t=>taskCard({...t,leadId:x.id})).join(''):'<p class="muted">No outstanding tasks for this contractor.</p>'}</div><section class="finish-call" style="border-top:1px solid #34445d;margin-top:24px;padding-top:18px"><h3>Finish Call &amp; Save Outcome</h3><p class="muted">Finish your notes and tasks first. Recording an outcome will not close this contractor.</p><div id="outcome-notice" class="banner hidden" role="status"></div><div class="actions">${['No answer','Voicemail','Connected','Interested','Follow-up','Demo scheduled','Do not call'].map(s=>`<button onclick="outcome('${s}')" ${x.status==='Do not call'?'disabled':''}>${s}</button>`).join('')}</div><button class="primary" onclick="nextLead()">Save &amp; Next Contractor →</button></section>`)};
 
-<style>
-#pasteDialog{max-width:750px;width:min(750px,96vw);color:#0f172a;background:#fff}#pasteDialog textarea{width:100%;min-height:190px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.55}#pastePreview{max-height:200px;overflow:auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:10px;font-size:13px;white-space:pre-wrap}#pasteDialog .muted{font-size:13px;color:#475569}#pasteDialog button{min-height:42px}
-</style>
-<dialog id="pasteDialog"><h2>Paste fence contractors</h2><p class="muted">One contractor per line. Separate fields with a vertical bar ( | ) or tabs. Format: <b>Business name | Phone | City | State | Website</b>. Website is optional. You can also paste CSV with a header row.</p><textarea id="pasteText" placeholder="Example Fence Co | (555) 010-1234 | Columbus | OH | https://example.com
-Another Fence Co | (555) 010-5678 | Dayton | OH"></textarea><div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0"><button onclick="previewPaste()">Preview</button><button onclick="document.getElementById('pasteText').value='';document.getElementById('pastePreview').textContent='Paste records to preview.'">Clear</button></div><div id="pastePreview" aria-live="polite">Paste records to preview.</div><div class="actions"><button onclick="document.getElementById('pasteDialog').close()">Cancel</button><button class="primary" onclick="commitPaste()">Import new contractors</button></div></dialog>
-<script>
-function openPaste(){document.getElementById('pasteDialog').showModal();document.getElementById('pasteText').focus()}
-function parsePastedLeads(){
- const raw=document.getElementById('pasteText').value.trim();if(!raw)return [];
- const lines=raw.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
- if(lines[0]&&/^(business_name|name),/i.test(lines[0])){
-  const csv=parseCSV(raw);const keys=csv.shift().map(x=>x.trim().toLowerCase());return csv.map(r=>Object.fromEntries(keys.map((k,i)=>[k,r[i]||''])));
+// v3.4 streamlined call workflow: outcomes are selected, then committed once.
+let pendingOutcome=null, pendingLeadId=null, followupExpanded=new Set();
+function selectOutcome(s){
+ const x=getLead();if(!x)return;
+ if(pendingLeadId!==x.id){pendingOutcome=null;pendingLeadId=x.id}
+ pendingOutcome=s;
+ if(s==='Follow-up'||s==='Demo scheduled')followupExpanded.add(x.id);
+ if(s==='Do not call')followupExpanded.delete(x.id);
+ renderDetail();
+}
+function toggleFollowup(){const x=getLead();if(!x)return;if(followupExpanded.has(x.id))followupExpanded.delete(x.id);else followupExpanded.add(x.id);renderDetail()}
+function commitAndNext(){
+ captureDraft();const x=getLead();if(!x)return;
+ const outcomeChoice=pendingLeadId===x.id?pendingOutcome:null;
+ if(outcomeChoice){
+   if(['Follow-up','Demo scheduled'].includes(outcomeChoice)&&!x.followup){alert('Choose a follow-up date and time before finishing this call.');followupExpanded.add(x.id);renderDetail();return}
+   const at=iso(),note=(x.draft||'').trim();x.status=outcomeChoice;x.last_contact=at;x.call_count=(x.call_count||0)+1;
+   x.notes.push({at,text:'Call: '+outcomeChoice+(note?'\n'+note:'')});x.draft='';
+   if(outcomeChoice==='Do not call'||outcomeChoice==='Not interested')x.followup='';
+   updateLead(x);
+ }else if((x.draft||'').trim()){
+   x.notes.push({at:iso(),text:x.draft.trim()});x.draft='';updateLead(x);
  }
- return lines.map(line=>{
-  const parts=line.includes('|')?line.split('|'):line.includes('\t')?line.split('\t'):null;
-  if(!parts)return {business_name:line};
-  const a=parts.map(x=>x.trim());return {business_name:a[0]||'',phone:a[1]||'',city:a[2]||'',state:a[3]||'',website:a[4]||'',contact_name:a[5]||''};
- });
+ const oldId=x.id;pendingOutcome=null;pendingLeadId=null;
+ // Move to the next eligible lead in alphabetical order, even if the current lead left the queue.
+ const visible=leads.filter(matches).sort((a,b)=>a.business_name.localeCompare(b.business_name));
+ const next=visible.find(v=>v.business_name.localeCompare(x.business_name)>0&&v.id!==oldId)||visible.find(v=>v.id!==oldId);
+ if(next)selected=next.id;else{selected=null}
+ render();
+ if(!next)alert('Saved. No more contractors in this view.');
 }
-function leadIdentity(x){const phone=String(x.phone||'').replace(/\D/g,'');const name=String(x.business_name||'').toLowerCase().replace(/[^a-z0-9]/g,'');const state=String(x.state||'').toUpperCase();const city=String(x.city||'').toLowerCase().trim();return {phone:phone.length>=10?phone.slice(-10):'',name:name&&state?name+'|'+state+'|'+city:''}}
-function pasteAnalysis(){const parsed=parsePastedLeads();const knownPhones=new Set(),knownNames=new Set();for(const l of leads){const k=leadIdentity(l);if(k.phone)knownPhones.add(k.phone);if(k.name)knownNames.add(k.name)}const additions=[];let duplicates=0,invalid=0;for(const raw of parsed){const x=norm(raw);if(!x.business_name.trim()){invalid++;continue}const k=leadIdentity(x);if((k.phone&&knownPhones.has(k.phone))||(k.name&&knownNames.has(k.name))){duplicates++;continue}if(k.phone)knownPhones.add(k.phone);if(k.name)knownNames.add(k.name);additions.push(x)}return {additions,duplicates,invalid,total:parsed.length}}
-function previewPaste(){const a=pasteAnalysis();const samples=a.additions.slice(0,6).map(x=>'• '+x.business_name+' — '+(x.phone||'no phone')+' — '+[x.city,x.state].filter(Boolean).join(', ')).join('\n');document.getElementById('pastePreview').textContent=`${a.total} lines · ${a.additions.length} new · ${a.duplicates} duplicates · ${a.invalid} missing names\n\n${samples}${a.additions.length>6?'\n… and '+(a.additions.length-6)+' more':''}`}
-function commitPaste(){const a=pasteAnalysis();if(!a.additions.length){previewPaste();return}leads.push(...a.additions);selected=a.additions[0].id;save();document.getElementById('pasteDialog').close();document.getElementById('pasteText').value='';document.getElementById('pastePreview').textContent='Paste records to preview.';alert(`Added ${a.additions.length} contractors. Skipped ${a.duplicates} duplicates and ${a.invalid} invalid lines.`)}
-</script>
-</body></html>
+const detailBeforeStreamline=renderDetail;
+renderDetail=function(){
+ detailBeforeStreamline();const x=getLead();if(!x)return;
+ if(pendingLeadId!==x.id){pendingLeadId=x.id;pendingOutcome=null}
+ const root=$('detail');
+ // Notes are autosaved; there is only one save/finalize action.
+ root.querySelectorAll('button').forEach(b=>{if(['Save note to history','Save & next →','Log call'].includes(b.textContent.trim()))b.remove()});
+ const statusSelect=[...root.querySelectorAll('select')].find(el=>el.getAttribute('onchange')?.includes("fieldChange('status'"));
+ if(statusSelect){const wrap=statusSelect.closest('.field');if(wrap)wrap.innerHTML='<label>Current status</label><div class="status-readout">'+esc(x.status)+'</div>'}
+ const followDate=$('follow-date');
+ if(followDate){const container=followDate.closest('.field');const visible=!!x.followup||followupExpanded.has(x.id)||['Follow-up','Demo scheduled'].includes(pendingOutcome);
+ if(container){container.classList.toggle('hidden',!visible);const button=document.createElement('button');button.textContent=visible?'− Hide follow-up':'＋ Schedule follow-up';button.type='button';button.onclick=toggleFollowup;container.parentNode.insertBefore(button,container);button.className='followup-toggle';if(pendingOutcome==='Do not call')button.classList.add('hidden')}
+ }
+ const finish=root.querySelector('.finish-call');if(!finish)return;
+ const msg=finish.querySelector('p.muted');if(msg)msg.textContent='Choose an outcome, then click Save & Next. Notes and contact changes autosave.';
+ finish.querySelectorAll('.actions button').forEach(b=>{
+   const s=b.textContent.trim();b.setAttribute('onclick',`selectOutcome('${s}')`);
+   b.classList.toggle('active',pendingOutcome===s);
+   b.disabled=false;
+ });
+ const final=finish.querySelector('button.primary');if(final){final.textContent='Save & Next Contractor →';final.onclick=commitAndNext}
+ const indicator=document.createElement('div');indicator.className='muted';indicator.style.margin='9px 0';indicator.textContent=pendingOutcome?'Selected outcome: '+pendingOutcome+' (not logged yet)':'No outcome selected — Save & Next will save notes only.';
+ final?.before(indicator);
+};
+const chooseBeforeStreamline=choose;
+choose=function(id){pendingOutcome=null;pendingLeadId=id;chooseBeforeStreamline(id)};
+const setTabBeforeStreamline=setTab;
+setTab=function(t){pendingOutcome=null;pendingLeadId=null;setTabBeforeStreamline(t)};
+const nextLeadBeforeStreamline=nextLead;
+nextLead=function(){commitAndNext()};
+render();
+
+// v3.5: edit saved activity notes without altering the call outcome or timestamp.
+function beginHistoryEdit(index){
+ const x=getLead();if(!x||!x.notes[index])return;
+ const n=x.notes[index], isCall=/^Call: [^\n]*/.test(n.text||'');
+ const original=n.text||'', body=isCall?(original.includes('\n')?original.slice(original.indexOf('\n')+1):''):original;
+ const row=document.querySelector(`[data-history-index="${index}"]`);if(!row)return;
+ row.querySelector('.history-view')?.classList.add('hidden');
+ const editor=row.querySelector('.history-editor');if(!editor)return;
+ editor.classList.remove('hidden');editor.querySelector('textarea').value=body;editor.querySelector('textarea').focus();
+}
+function cancelHistoryEdit(index){const row=document.querySelector(`[data-history-index="${index}"]`);if(!row)return;row.querySelector('.history-editor')?.classList.add('hidden');row.querySelector('.history-view')?.classList.remove('hidden')}
+function saveHistoryEdit(index){
+ const x=getLead(),n=x?.notes[index],row=document.querySelector(`[data-history-index="${index}"]`);if(!n||!row)return;
+ const edited=row.querySelector('.history-editor textarea').value;
+ const match=(n.text||'').match(/^(Call: [^\n]*)(?:\n[\s\S]*)?$/);
+ n.text=match?match[1]+(edited.trim()?'\n'+edited:''):edited;
+ n.edited_at=iso();updateLead(x);renderDetail();renderList();
+}
+const detailBeforeHistoryEdit=renderDetail;
+renderDetail=function(){
+ detailBeforeHistoryEdit();const x=getLead();if(!x)return;
+ const rows=$('detail').querySelectorAll('.history .entry');
+ rows.forEach((row,reverseIndex)=>{
+  const index=x.notes.length-1-reverseIndex,n=x.notes[index];if(!n)return;
+  row.dataset.historyIndex=String(index);
+  const old=row.innerHTML;
+  const match=(n.text||'').match(/^(Call: [^\n]*)(?:\n[\s\S]*)?$/);
+  const label=match?'Edit call notes':'Edit note';
+  row.innerHTML=`<div class="history-view">${old}<button type="button" class="history-edit-btn" onclick="beginHistoryEdit(${index})">✎ ${label}</button></div><div class="history-editor hidden"><div class="muted" style="margin-bottom:6px">${match?'Call outcome and original timestamp are locked. Edit the notes below.':'Edit this saved note. Original timestamp is preserved.'}</div><textarea aria-label="Edit activity note" style="min-height:95px"></textarea><div class="actions"><button type="button" class="primary" onclick="saveHistoryEdit(${index})">Save changes</button><button type="button" onclick="cancelHistoryEdit(${index})">Cancel</button></div></div>`;
+ });
+};
+render();
+
+// Preserve the original note autosave, cloud lead synchronization, and phone markup.
+render();
+
+/* DopeDialer 3.7: sync general tasks in public.tasks, preserving local-first behavior. */
+let TASK_DELETIONS_KEY='dopedialer_v37_task_deletions';
+let taskDeletedIds=new Set(JSON.parse(localStorage.getItem(TASK_DELETIONS_KEY)||'[]'));
+let taskCloudQueue=new Set(),taskCloudBusy=false,taskCloudTimer=null;
+const taskStamp=t=>t.updated_at||t.completed_at||t.created_at||'1970-01-01T00:00:00Z';
+function queueTaskCloud(id){if(!cloudSession)return;taskCloudQueue.add(id);clearTimeout(taskCloudTimer);taskCloudTimer=setTimeout(flushTaskCloud,900)}
+function persistTaskDeletion(){localStorage.setItem(TASK_DELETIONS_KEY,JSON.stringify([...taskDeletedIds]))}
+const _saveGeneralTasks37=saveGeneralTasks;
+saveGeneralTasks=function(){
+  const old=JSON.parse(localStorage.getItem(TASK_KEY)||'[]');
+  const present=new Set(generalTasks.map(t=>t.id));
+  for(const t of old)if(!present.has(t.id)){taskDeletedIds.add(t.id);persistTaskDeletion();queueTaskCloud(t.id)}
+  const before=new Map(old.map(t=>[t.id,t]));
+  for(const t of generalTasks){const previous=before.get(t.id);if(!previous||JSON.stringify({...previous,updated_at:null})!==JSON.stringify({...t,updated_at:null})){
+    t.updated_at=iso();taskDeletedIds.delete(t.id);queueTaskCloud(t.id);
+  }}
+  persistTaskDeletion();_saveGeneralTasks37();
+};
+async function pullGeneralTasks(){
+  if(!cloudSession)return;
+  const t=await token(),r=await fetch(cfg().url+'/rest/v1/tasks?select=data,updated_at&limit=10000',{headers:headers(t)});
+  if(!r.ok)throw Error('Task download '+r.status+': '+(await r.text()).slice(0,150));
+  const rows=await r.json(),merged=new Map(generalTasks.map(x=>[x.id,x]));
+  for(const row of rows){const item=row.data;if(!item||!item.id||taskDeletedIds.has(item.id))continue;
+    const previous=merged.get(item.id);
+    if(!previous||new Date(row.updated_at||taskStamp(item))>new Date(taskStamp(previous)))merged.set(item.id,{...item,updated_at:row.updated_at||taskStamp(item)});
+  }
+  generalTasks=[...merged.values()];_saveGeneralTasks37();
+  // Seed missing local tasks into cloud; also propagate pending local edits/deletions.
+  for(const item of generalTasks){const remote=rows.find(row=>row.data?.id===item.id);if(!remote||new Date(taskStamp(item))>new Date(remote.updated_at))taskCloudQueue.add(item.id)}
+  for(const id of taskDeletedIds)taskCloudQueue.add(id);
+  render();await flushTaskCloud();
+}
+async function flushTaskCloud(){
+  if(!cloudSession||taskCloudBusy||!taskCloudQueue.size)return;
+  taskCloudBusy=true;
+  try{
+    storeCfg();const t=await token(),user=cloudSession.user?.id;if(!user)throw Error('No signed-in user');
+    for(const id of [...taskCloudQueue]){
+      const task=generalTasks.find(x=>x.id===id);
+      if(!task||taskDeletedIds.has(id)){
+        const r=await fetch(cfg().url+'/rest/v1/tasks?id=eq.'+encodeURIComponent(id),{method:'DELETE',headers:headers(t)});
+        if(!r.ok)throw Error('Task delete '+r.status+' '+(await r.text()).slice(0,120));
+        taskDeletedIds.delete(id);persistTaskDeletion();
+      }else{
+        const r=await fetch(cfg().url+'/rest/v1/tasks?on_conflict=id',{method:'POST',headers:{...headers(t),'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify([{id,user_id:user,data:task,updated_at:taskStamp(task)}])});
+        if(!r.ok)throw Error('Task upload '+r.status+' '+(await r.text()).slice(0,120));
+      }
+      taskCloudQueue.delete(id);
+    }
+    $('save-state').textContent='Leads and tasks synced';$('save-state').className='save';
+  }catch(e){$('save-state').textContent='Task sync failed — local data retained';$('save-state').className='warn';console.error(e)}
+  finally{taskCloudBusy=false;}
+}
+const _cloudPull37=cloudPull;
+cloudPull=async function(){await _cloudPull37();if(cloudSession){try{await pullGeneralTasks();cloudMsg('Leads and general tasks synchronized.')}catch(e){cloudMsg('General task sync error: '+e.message)}}};
+const _cloudSignIn37=cloudSignIn;
+cloudSignIn=async function(){await _cloudSignIn37();if(cloudSession){
+  // Upload local leads that have no cloud record after the initial pull.
+  try{const t=await token(),r=await fetch(cfg().url+'/rest/v1/leads?select=id&limit=10000',{headers:headers(t)});
+    if(r.ok){const ids=new Set((await r.json()).map(x=>x.id));for(const x of leads)if(!ids.has(x.id))cloudQueue.add(x.id);if(cloudQueue.size)scheduleCloud()}
+  }catch(e){console.error('Lead initial upload:',e)}
+}};
+const _cloudSignOut37=cloudSignOut;
+cloudSignOut=function(){clearTimeout(taskCloudTimer);taskCloudQueue.clear();_cloudSignOut37()};
+
+
+/* DopeDialer 3.8: fixed public client configuration and account-isolated browser storage. */
+const DD_URL='https://gijcvdrcyzaagbxnoheq.supabase.co';
+const DD_PUBLIC_KEY='sb_publishable_4Fj4bYschELQpXZ0HI854A_AocqngIu';
+function ddConfig(){ $('sb-url').value=DD_URL;$('sb-key').value=DD_PUBLIC_KEY; }
+ddConfig();
+// Cloud code reads cfg() and storeCfg(). Never accept a user-supplied project URL/key.
+cfg=function(){return {url:DD_URL,key:DD_PUBLIC_KEY}};
+storeCfg=function(){return true};
+function ddStorage(userId){
+  KEY='dopedialer_v38_leads_'+userId;
+  TASK_KEY='dopedialer_v38_tasks_'+userId;
+  TASK_DELETIONS_KEY='dopedialer_v38_deleted_tasks_'+userId;
+}
+function ddClearMemory(){
+  clearTimeout(cloudTimer);clearTimeout(taskCloudTimer);cloudQueue.clear();taskCloudQueue.clear();
+  leads=[];generalTasks=[];taskDeletedIds=new Set();selected=null;render();
+}
+function ddShowLogin(message=''){
+  document.body.classList.remove('dd-authenticated');
+  $('dd-status').textContent=message;
+}
+function ddShowApp(){document.body.classList.add('dd-authenticated');}
+function ddSetCredentials(){
+  ddConfig();$('sb-email').value=$('dd-email').value.trim();$('sb-password').value=$('dd-pass').value;
+}
+async function ddSignIn(){
+  ddSetCredentials();$('dd-status').textContent='Signing in…';
+  // Clear data from any other account BEFORE invoking v3.7's merge and upload logic.
+  cloudSession=null;ddClearMemory();
+  await cloudSignIn();
+  if(cloudSession?.user?.id){ddShowApp();$('dd-pass').value='';$('dd-status').textContent='';}
+  else ddShowLogin($('cloud-msg').textContent);
+}
+async function ddSignUp(){
+  ddSetCredentials();$('dd-status').textContent='Creating account…';
+  await cloudSignUp();
+  $('dd-status').textContent=$('cloud-msg').textContent+' If email confirmation is enabled, check your inbox before signing in.';
+}
+const ddOriginalCloudSignIn=cloudSignIn;
+cloudSignIn=async function(){
+  // Authenticate first, then switch to the user's private local storage before any cloud merge.
+  try{
+    const d=await authCall('token?grant_type=password');
+    d.expires_at=Math.floor(Date.now()/1000)+(d.expires_in||3600);
+    if(!d.user?.id)throw Error('No account ID returned');
+    ddStorage(d.user.id);ddClearMemory();
+    try{leads=(JSON.parse(localStorage.getItem(KEY)||'[]')).map(norm)}catch{leads=[]}
+    try{generalTasks=JSON.parse(localStorage.getItem(TASK_KEY)||'[]')}catch{generalTasks=[]}
+    try{taskDeletedIds=new Set(JSON.parse(localStorage.getItem(TASK_DELETIONS_KEY)||'[]'))}catch{taskDeletedIds=new Set()}
+    cloudSession=d;sessionStorage.setItem(AUTH,JSON.stringify(d));
+    cloudMsg('Signed in. Downloading cloud data…');
+    await cloudPull();
+    // Verify sync succeeded before allowing the CRM to be used.
+    if($('cloud-msg').textContent.startsWith('Sync error')||$('cloud-msg').textContent.startsWith('General task sync error'))throw Error($('cloud-msg').textContent);
+    // Upload locally saved leads not present remotely (same account only).
+    const t=await token(),r=await fetch(DD_URL+'/rest/v1/leads?select=id&limit=10000',{headers:headers(t)});
+    if(!r.ok)throw Error('Lead check failed: '+r.status);
+    const ids=new Set((await r.json()).map(x=>x.id));
+    for(const x of leads)if(!ids.has(x.id))cloudQueue.add(x.id);
+    if(cloudQueue.size)scheduleCloud();
+    cloudMsg('Connected. Changes will sync to Supabase.');render();
+  }catch(e){cloudSession=null;sessionStorage.removeItem(AUTH);ddClearMemory();cloudMsg('Sign-in error: '+e.message)}
+};
+cloudSignOut=function(){
+  clearTimeout(taskCloudTimer);clearTimeout(cloudTimer);taskCloudQueue.clear();cloudQueue.clear();
+  cloudSession=null;sessionStorage.removeItem(AUTH);ddClearMemory();ddShowLogin('Signed out.');
+};
+// Do not display old unscoped local data. Existing v3.7 data is already in Supabase.
+ddClearMemory();
+const ddStoredSession=cloudSession;
+cloudSession=null;
+if(ddStoredSession?.user?.id){
+  // Restore by refreshing the session token through Supabase, not trusting local identity alone.
+  (async()=>{
+    try{
+      ddStorage(ddStoredSession.user.id);
+      cloudSession=ddStoredSession;
+      const t=await token();
+      const r=await fetch(DD_URL+'/auth/v1/user',{headers:headers(t)});
+      if(!r.ok)throw Error('Session no longer valid');
+      const user=await r.json();
+      if(user.id!==ddStoredSession.user.id)throw Error('Account mismatch');
+      try{leads=(JSON.parse(localStorage.getItem(KEY)||'[]')).map(norm)}catch{leads=[]}
+      try{generalTasks=JSON.parse(localStorage.getItem(TASK_KEY)||'[]')}catch{generalTasks=[]}
+      try{taskDeletedIds=new Set(JSON.parse(localStorage.getItem(TASK_DELETIONS_KEY)||'[]'))}catch{taskDeletedIds=new Set()}
+      await cloudPull();
+      if($('cloud-msg').textContent.startsWith('Sync error')||$('cloud-msg').textContent.startsWith('General task sync error'))throw Error('Cloud download failed');
+      ddShowApp();render();
+    }catch(e){cloudSession=null;sessionStorage.removeItem(AUTH);ddClearMemory();ddShowLogin('Please sign in again.');}
+  })();
+}else ddShowLogin();
+</script></body></html>
